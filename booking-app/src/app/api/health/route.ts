@@ -1,7 +1,18 @@
-import { connection } from "next/server"; // It tells Next.js that this part of the code needs to wait for an actual incoming request before continuing.
-import { ok } from "@/lib/http";
+import { connection } from "next/server";
+import { fail, ok } from "@/lib/http";
+import { AppError } from "@/lib/errors";
+import { createRouteLogger } from "@/utils/logger";
+import { handleRouteError } from "@/utils/handleRouteError";
 
 export async function GET() {
   await connection();
-  return ok({ status: "ok" });
+  const log = createRouteLogger("health", "GET");
+  try {
+    log.info("HEALTH_OK", { durationMs: log.duration() });
+    return ok({ status: "ok" });
+  } catch (err) {
+    if (err instanceof AppError) return fail(err.message, err.status);
+    handleRouteError(err, log);
+    return fail("Something went wrong", 500);
+  }
 }
