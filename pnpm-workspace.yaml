@@ -1,0 +1,6 @@
+packages:
+  - "booking-app"
+
+allowBuilds:
+  sharp: false
+  unrs-resolver: false

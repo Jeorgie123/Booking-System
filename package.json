@@ -1,0 +1,13 @@
+{
+  "name": "booking-system",
+  "private": true,
+  "scripts": {},
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.8.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module"
+}
