@@ -1,0 +1,72 @@
+# ---------------------------------------------
+# Dependencies (pnpm workspace, all services)
+# ---------------------------------------------
+node_modules/
+.pnpm-store/
+
+# ---------------------------------------------
+# Build output
+# ---------------------------------------------
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# ---------------------------------------------
+# Environment files (secrets!)
+# Ignore every .env file, but keep .env.example
+# so others know which variables are needed.
+# ---------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------
+# Logs
+# ---------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------------------------------------------
+# Tests and coverage
+# ---------------------------------------------
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# ---------------------------------------------
+# Tool caches
+# ---------------------------------------------
+.turbo/
+.eslintcache
+.cache/
+.vercel/
+
+# ---------------------------------------------
+# Docker (local data volumes and overrides)
+# ---------------------------------------------
+docker-compose.override.yml
+.docker-data/
+
+# ---------------------------------------------
+# Editors and operating systems
+# ---------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------------------------------------------
+# Claude Code personal settings
+# ---------------------------------------------
+.claude/settings.local.json
